@@ -7,7 +7,7 @@ describe NameInspecter do
   end
 
   it "shigotoはfalse" do
-    @obj.is_shigotop('shigoto').should be_false:
+    @obj.is_shigotop('shigoto').should be_false
   end
 
   it "shigotopはtrue" do
