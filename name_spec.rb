@@ -2,8 +2,8 @@ require "./spec_helper.rb"
 require "./nameinspecter.rb"
 
 describe NameInspecter do
-  before do
-    obj = NameInspecter.new
+  before :each do
+    @obj = NameInspecter.new
   end
 
   it "shigotoはfalse" do
