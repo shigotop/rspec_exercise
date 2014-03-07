@@ -33,11 +33,4 @@ describe OrangeTree do
 	end
     output.should be_include '木は死にました'
   end
-
-  it "七年で死んでexit" do
-    6.times do
-      @tree.oneYearPasses
-    end
-      lambda{@tree.oneYearPasses}.should raise_error(SystemExit)
-  end
 end
