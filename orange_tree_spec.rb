@@ -25,16 +25,16 @@ describe OrangeTree do
   end
 
   it "七年で死んでメッセージ表示" do
-    6.times do
+	6.times do
 	  @tree.oneYearPasses
-	end
-	capture(:stdout){@tree.oneYearPasses}.should == '木は死にました'  :
+    end
+	capture(:stdout){@tree.oneYearPasses}.should == '木は死にました' 
   end
 
   it "七年で死んでexit" do
-	6.times do
+    6.times do
 	  @tree.oneYearPasses
-	end
-	lambda {@tree.oneYearPasses}.should raise_error(SystemExit)
+    end
+    lambda {@tree.oneYearPasses}.should raise_error(SystemExit)
   end
 end
