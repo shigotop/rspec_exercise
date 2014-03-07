@@ -35,13 +35,13 @@ describe OrangeTree do
   end
 
   it "三年目から毎年年齢と同じ数の実をつける" do
-    3.times do
+    4.times do
       @tree.instance_variable_get(:@orangeCount).should == 0
       @tree.oneYearPasses
     end
-	@orange = @tree.instance_variable_get(:@orangeCount) 
-    @year = @tree.instance_variable_get(:@year)
-	@orange.should == @year
+	orange = @tree.instance_variable_get(:@orangeCount) 
+    year = @tree.instance_variable_get(:@year)
+	orange.should == year
   end
 
   it "木になっているオレンジの数を返す" do
@@ -66,7 +66,7 @@ describe OrangeTree do
   end
 
   it "ある年に取り残したオレンジは次の年に落ちる" do
-  # 毎年、年齢個の実がなって年齢-1個の実が落ちるので、1個ずつ増える
+  # 毎年、年齢個の実がなって年齢-1個の実が落ちるので常に個数＝年齢
     4.times do
       @tree.oneYearPasses
     end
@@ -74,7 +74,7 @@ describe OrangeTree do
       @tree.oneYearPasses
       count = @tree.instance_variable_get(:@orangeCount)
 	  year = @tree.instance_variable_get(:@year)
-	  count.should == year - 3
+	  count.should == year
     end
   end
 end
